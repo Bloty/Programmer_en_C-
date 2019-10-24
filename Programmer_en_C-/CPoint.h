@@ -8,6 +8,8 @@ private:
 	int nX;
 	int nY;
 
+	int *pnX;
+
 public:
 	//prototype
 	int getX();
@@ -15,5 +17,14 @@ public:
 
 	void setX(int value);
 	void setY(int value);
+
+	void init(int nX, int nY);
+
+	//constructeur
+	CPoint();
+	CPoint(int nX, int nY);
+
+	//destructeur
+	~CPoint();
 };
 
