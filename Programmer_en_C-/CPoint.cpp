@@ -1,5 +1,7 @@
 #include "CPoint.h"
+#include <iostream>
 
+int CPoint::nbPoint = 0;
 
 int CPoint::getX()
 {
@@ -32,6 +34,7 @@ void CPoint::init(int nX, int nY)
 
 
 //constructeur sans parametre
+/*
 CPoint::CPoint()
 {
 	this->nX = 0;
@@ -40,13 +43,53 @@ CPoint::CPoint()
 	*pnX = 0;
 }
 
+//constructeur avec parametre
 CPoint::CPoint(int nX, int nY)
 {
 	this->nX = nX;
 	this->nY = nY;
 }
+*/
+
 
 CPoint::~CPoint()
 {
-	delete pnX;
+	nbPoint--;
 }
+
+bool CPoint::coincidePoint(const CPoint pt)
+{
+	return ((pt.nX == nX) && (pt.nY == nY));
+}
+
+bool CPoint::coincidePoint(const CPoint* pt)const
+{
+	return ((pt->nX == nX) && (pt->nY == nY));
+}
+
+bool CPoint::coincidePoint(const CPoint& pt)const
+{
+	return ((pt.nX == nX) && (pt.nY == nY));
+}
+
+CPoint CPoint::sym()
+{
+	CPoint ptSym;
+
+	ptSym.nX = -nX;
+	ptSym.nY = -nY;
+
+	return ptSym;
+}
+
+void CPoint::compte()
+{
+	std::cout << "Y : " << "nb point : " << CPoint :: nbPoint<< std::endl;
+}
+
+void CPoint::affichePoint() const
+{
+	std::cout << "x : " << nX  << std::endl;
+	std::cout << "y : " << nY << std::endl;
+}
+

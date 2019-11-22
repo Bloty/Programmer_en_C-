@@ -6,25 +6,23 @@
 //using namespace std; //espace de nom
 //Pour utiliser un espace nom sans using on utilise ::
 
-//POO C++
 //Class
 int main()
 {
-	CPoint ptMonPoint;
+	CPoint ptMonPoint(10, 5);
+	CPoint::compte();
 	CPoint ptMonPoint2(10, 5);
+	CPoint::compte();
 
-	//init
-	//ptMonPoint.init(1, 0);
 /*
-	ptMonPoint.setX(7);
-	ptMonPoint.setY(75);
-
-
 	std::cout<<"X : " << ptMonPoint.getX() << std::endl;
 	std::cout << "Y : " << ptMonPoint.getY() << std::endl;
+
+	std::cout << ptMonPoint.coincidePoint(&ptMonPoint2) << std::endl;
 */
 
-	system("pause");
+	ptMonPoint.affichePoint();
+	//system("pause");
 
 	return 0;
 }
