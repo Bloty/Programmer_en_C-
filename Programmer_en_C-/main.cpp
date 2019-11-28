@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "CPoint.h"
-#include "CCercle.h"
+#include "cCercle.h"
 
 
 
@@ -14,10 +14,14 @@ int main()
 {
 
 
-/*
+
 	CPoint pt(10, 12);
 	CPoint pt2(0, 0);
-	//pt2 = CPoint(2, 3);
+	CPoint* pt3 = new CPoint();
+
+	std::cout << coincide(pt, pt2);
+
+/*	//pt2 = CPoint(2, 3);
 
 	char cColor[10] = { "rouge" };
 	CPoint ptMonPoint(5, 9, cColor);
@@ -40,7 +44,7 @@ int main()
 	std::cout << "Color : " << ptMonPoint2.getColor() << std::endl;
 */
 
-	CCercle cercle(8, 9, 50);
+	cCercle cercle(8, 9, 50);
 
 	system("pause");
 

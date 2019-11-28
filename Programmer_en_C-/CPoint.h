@@ -1,4 +1,8 @@
 #pragma once
+
+class cCercle;//forward déclaration
+
+
 //Point dans un plan
 class CPoint
 {
@@ -35,7 +39,13 @@ public:
 	//Constructeur de copie
 	CPoint(const CPoint& p);
 
+	//Fonction indé amie diune classe
+	friend bool coincide(const CPoint& p, const CPoint& q);
 
+	//Fonction membre de la classe Point amie de la classe Cercle
+	void affichePointCercle(const CPoint pt, const cCercle c);
+
+	friend void affichePointCercle(const CPoint pt, const cCercle c);
 
 	//Destructeur
 	~CPoint();

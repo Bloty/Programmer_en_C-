@@ -1,6 +1,8 @@
 #include "CPoint.h"
+#include "cCercle.h"
 #include <stdlib.h> 
 #include <string>
+#include <iostream>
 
 
 
@@ -49,6 +51,7 @@ CPoint::CPoint(int nX, int nY, char cColor[])
 
 }
 
+
 char* CPoint::getColor()
 {
 	return cColor;
@@ -58,7 +61,6 @@ void CPoint::setColor(char* cColor)
 {
 	strcpy_s(this->cColor, strlen(cColor) + 1, cColor);
 }
-
 
 
 CPoint::CPoint(const CPoint& p)
@@ -71,9 +73,24 @@ CPoint::CPoint(const CPoint& p)
 }
 
 
+void CPoint::affichePointCercle(const CPoint pt,const cCercle c)
+{
+	std::cout<< " x : " <<pt.nX;
+	std::cout << " y : " << pt.nY;
+	std::cout << " rayon : " << c.nR;
+	std::cout << " centre x : " << c.pt.nX;
+	std::cout << " centre y : " << c.pt.nY;
+
+}
 
 CPoint::~CPoint()
 {
 
 	delete cColor;
+}
+
+
+bool coincide(const CPoint& p, const CPoint& q)
+{
+	return ((p.nX == q.nX) && (p.nY == q.nY));
 }

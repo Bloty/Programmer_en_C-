@@ -1,13 +1,13 @@
 #pragma once
 #include "CPoint.h"
 
-class CCercle
+class cCercle
 {
 	CPoint pt;
 	int nR;
 
 public:
-
-	CCercle(int, int, int);
-	~CCercle();
+	friend void CPoint::affichePointCercle(const CPoint pt, const cCercle c);
+	cCercle(int, int, int);
+	~cCercle();
 };
