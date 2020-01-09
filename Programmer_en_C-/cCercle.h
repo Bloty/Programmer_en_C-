@@ -7,7 +7,7 @@ class cCercle
 	int nR;
 
 public:
-	friend void CPoint::affichePointCercle(const CPoint pt, const cCercle c);
+	//friend void CPoint::affichePointCercle(const CPoint pt, const cCercle c);
 	cCercle(int, int, int);
 	~cCercle();
 };

@@ -29,64 +29,54 @@ void CPoint::setY(int nY)
 }
 
 
-
+//constructeur
 CPoint::CPoint(int nX, int nY)
 {
 	this->nX = nX;
 	this->nY = nY;
 }
 
-CPoint::
-
-
-//Constructeur avec parametres
-CPoint::CPoint(int nX, int nY, char cColor[])
+bool CPoint::operator==(CPoint const& pt)
 {
-	this->nX = nX;
-	this->nY = nY;
+	if ((this->nX == pt.nX) && (this->nY == pt.nY))
+		return true;
+	else
+		return false;
 
-	this->cColor = new char[strlen(cColor) + 1];
-	int nTaille = strlen(cColor) + 1;
-	strcpy_s(this->cColor, nTaille, cColor);
-
+	
 }
 
-
-char* CPoint::getColor()
+//surcharge d'un opérateur
+CPoint CPoint::operator+(CPoint const& pt)
 {
-	return cColor;
+	CPoint somme;
+	somme.nX = this->nX + pt.nX;
+	somme.nY = this->nY + pt.nY;
+
+	return somme;
 }
 
-void CPoint::setColor(char* cColor)
+CPoint CPoint::operator-(CPoint const& pt)
 {
-	strcpy_s(this->cColor, strlen(cColor) + 1, cColor);
+	CPoint res;
+	res.nX = this->nX - pt.nX;
+	res.nY = this->nY - pt.nY;
+
+	return res;
 }
 
-
-CPoint::CPoint(const CPoint& p)
+CPoint CPoint::operator*(CPoint const& pt)
 {
-	this->nX = p.nX;
-	this->nY = p.nY;
-	this->cColor = new char[strlen(p.cColor) + 1];
-	int nTaille = strlen(p.cColor) + 1;
-	strcpy_s(this->cColor, nTaille, p.cColor);
+	CPoint res;
+	res.nX = this->nX * pt.nX;
+	res.nY = this->nY * pt.nY;
+
+	return res;
 }
 
-
-void CPoint::affichePointCercle(const CPoint pt,const cCercle c)
-{
-	std::cout<< " x : " <<pt.nX;
-	std::cout << " y : " << pt.nY;
-	std::cout << " rayon : " << c.nR;
-	std::cout << " centre x : " << c.pt.nX;
-	std::cout << " centre y : " << c.pt.nY;
-
-}
 
 CPoint::~CPoint()
 {
-
-	delete cColor;
 }
 
 
@@ -94,3 +84,4 @@ bool coincide(const CPoint& p, const CPoint& q)
 {
 	return ((p.nX == q.nX) && (p.nY == q.nY));
 }
+

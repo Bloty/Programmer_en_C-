@@ -6,20 +6,28 @@
 
 
 //POO C++
-//Class (Données et méthodes)
+//Fonction amie
 
 
 
 int main()
 {
-
-
-
-	CPoint pt(10, 12);
-	CPoint pt2(0, 0);
+	CPoint pt(2, 2);
+	CPoint pt2(2, 2);
 	CPoint* pt3 = new CPoint();
+	CPoint resultat;
+	bool leBool;
+	cCercle cercle(8, 9, 50);
 
-	std::cout << coincide(pt, pt2);
+	resultat = pt * pt2;
+	leBool = pt == pt2;
+
+	std::cout << "X : " << resultat.getX() << std::endl;
+	std::cout << "Y : " << resultat.getY() << std::endl;
+	std::cout << leBool << std::endl;
+
+
+
 
 /*	//pt2 = CPoint(2, 3);
 
@@ -44,7 +52,7 @@ int main()
 	std::cout << "Color : " << ptMonPoint2.getColor() << std::endl;
 */
 
-	cCercle cercle(8, 9, 50);
+
 
 	system("pause");
 
